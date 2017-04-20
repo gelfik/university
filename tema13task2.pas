@@ -1,9 +1,9 @@
 program tema13task2;
 const n=5;
 var a:array[1..n] of integer;
-      ans,x:char;
-      st:string[n];
-      i,z:integer;
+    ans,x:char;
+    st:string[n];
+    i,z:integer;
 begin
   repeat
     write('Введите ',n,' символов: ');
@@ -22,7 +22,7 @@ begin
       readln(ans);
     until ans='n';
     writeln;
-    write('Хотите продолжить(y/n)? Ваш выбор: ');
+    write('Хотите ввести новые символы(y/n)? Ваш выбор: ');
     readln(ans);
   until ans='n';
 end.
