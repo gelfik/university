@@ -6,7 +6,7 @@ var a:array[1..n] of integer;
       i,z:integer;
 begin
   repeat
-    writeln('Введите ',n,' символов: ');
+    write('Введите ',n,' символов: ');
     read(st);
     writeln;
     repeat
@@ -16,6 +16,8 @@ begin
       for i:=1 to length(st) do begin
         if st[i]=x then z:=z+1;
       end;
+      write('Найдено ',z,' совподений.');
+      writeln;
       write('Хотите продолжить поиск(y/n)? Ваш выбор: ');
       readln(ans);
     until ans='n';
