@@ -1,14 +1,15 @@
 program tema18task1;
 const n=9999999999;
 var mas:array[1..n] of integer;
-    i,x,maximum: integer;
+    i,x,maximum,l,r: integer;
     z:integer;
 
 procedure gener;
     function max:integer;
         begin
             maximum:=mas[1];
-            for i:=1 to x do if maximum<mas[i] then maximum:=mas[i];
+            for i:=1 to x do if maximum<mas[i] then if mas[i]>l then if mas[i]<r then maximum:=mas[i]
+              else maximum:=0;
             max:=maximum;
         end;
 
@@ -22,6 +23,8 @@ procedure gener;
                 Write(mas[i], ' ');
             end;
         WriteLn;
+        Write('Введите левую границу массива: ');ReadLn(l);
+        Write('Введите правую границу массива: ');ReadLn(r);
         WriteLn('   Максимальное число: ', max:3);
         WriteLn;
     end;
