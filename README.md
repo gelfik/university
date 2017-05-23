@@ -1,2 +1,6 @@
 # It's my homework and classwork...
-///plz d'not save this work...
+:heavy_exclamation_mark:plz d'not save this work... :floppy_disk:
+
+:heavy_exclamation_mark:Close the page for your safety:x::x::x: 
+
+:wink: :stuck_out_tongue: :wink:
