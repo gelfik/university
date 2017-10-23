@@ -3,46 +3,52 @@ program project1;
 const N = 10;
 
 var mas: array [0..N] of integer;
-  st, k, i, first, last: byte;
-  otv: char;
+  k, st, first, last: byte;
 
 procedure add_elem;
+var i: byte;
+  otv: char;
 begin
     repeat
       writeln;
-      i:=i+1;
-      if (st=0) then writeln('Очередь пуста!');
-        if (st=N) then writeln('Очередь заполнена!')
-           else begin
-             mas[i]:=random(100);
-             st:=st+1;
-             if last=n+1 then last:=1 else last:=last+1;
-           end;
-      write('Ваша очередь: ');for i:=1 to last do write(mas[i], ' ');writeln;
+      if (st > n) then writeln('Очередь переполнена!');
+      if (st < n + 1) then
+      begin
+        mas[last] := random(100);
+        writeln('Элемент [', mas[last], '] успешно добавлен.');
+        inc(last);
+        if (last > n) then last := 0;
+        inc(st);
+      end;
+      write('Ваша очередь: ');for i:=first to last do write(mas[i], ' ');writeln;
       write('      Хотите добавить еще один элемент? (y/n): ');readln(otv);
       until otv='n';
     writeln;
     end;
 
 procedure del_elem;
+var i: byte;
+  otv: char;
 begin
     repeat
       writeln;
-        if (st=0) then writeln('Очередь пуста!')
-           else begin
-             st:=st-1;
-             if first=n+1 then first:=1 else first:=first+1;
-             mas[first]:=0;
-           end;
-      i:=i-1;
-      write('Ваша очередь: ');for i:=1 to last do write(mas[i], ' ');writeln;
+        if (st = 0) then writeln('Удаление невозможно!');
+        if (st > 0) then
+          begin
+            writeln('Элемент [', mas[first], '] успешно удалён.');
+            mas[first] := 0;
+            inc(first);
+            if (first > n) then first := 0;
+            dec(st);
+          end;
+      write('Ваша очередь: ');for i:=first to last do write(mas[i], ' ');writeln;
       write('      Хотите удалить еще один элемент? (y/n): ');readln(otv);
       until otv='n';
     writeln;
     end;
 
 begin
-  st:=0;i:=0;first:=1;last:=1;
+  st:=0;first:=0;last:=0;
 
   randomize;
 
