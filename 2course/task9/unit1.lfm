@@ -1,0 +1,63 @@
+object Form1: TForm1
+  Left = 270
+  Height = 428
+  Top = 318
+  Width = 598
+  BorderStyle = bsToolWindow
+  Caption = 'Задание 9, Выполнил: Гильфанов Булат'
+  ClientHeight = 408
+  ClientWidth = 598
+  Menu = MenuMy
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.8.2.0'
+  object Image1: TImage
+    Left = 0
+    Height = 408
+    Top = 0
+    Width = 598
+    Align = alClient
+  end
+  object MenuMy: TMainMenu
+    left = 512
+    top = 328
+    object MenuCreateKont: TMenuItem
+      Caption = 'Создать контейнер'
+      object MenuCreateKont_Clear: TMenuItem
+        Caption = 'Пустой'
+        OnClick = MenuCreateKont_ClearClick
+      end
+      object MenuCreateKont_Full: TMenuItem
+        Caption = 'Заполненый'
+        OnClick = MenuCreateKont_FullClick
+      end
+    end
+    object MenuEditKont: TMenuItem
+      Caption = 'Редактирование контейнера'
+      object MenuEditKont_Add: TMenuItem
+        Caption = 'Добавить'
+        OnClick = MenuEditKont_AddClick
+      end
+      object MenuEditKont_Del: TMenuItem
+        Caption = 'Удалить'
+        OnClick = MenuEditKont_DelClick
+      end
+      object MenuEditKont_Move: TMenuItem
+        Caption = 'Переместить'
+        OnClick = MenuEditKont_MoveClick
+      end
+      object MenuEditKont_DelKont: TMenuItem
+        Caption = 'Уничтожить контейнер'
+        OnClick = MenuEditKont_DelKontClick
+      end
+    end
+    object MenuClear: TMenuItem
+      Caption = 'Очистить'
+      OnClick = MenuClearClick
+    end
+    object MenuClose: TMenuItem
+      Caption = 'Выход'
+      OnClick = MenuCloseClick
+    end
+  end
+end
