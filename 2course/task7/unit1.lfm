@@ -1,0 +1,89 @@
+object Form1: TForm1
+  Left = 673
+  Height = 472
+  Top = 341
+  Width = 761
+  HorzScrollBar.Page = 90
+  HorzScrollBar.Range = 90
+  VertScrollBar.Page = 90
+  VertScrollBar.Range = 90
+  Caption = 'Создание фигур'
+  ClientHeight = 452
+  ClientWidth = 761
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  LCLVersion = '1.6.4.0'
+  object Image1: TImage
+    Left = 0
+    Height = 452
+    Top = 0
+    Width = 761
+    Align = alClient
+    Center = True
+  end
+  object MainMenu1: TMainMenu
+    left = 204
+    top = 113
+    object MenuItem1: TMenuItem
+      Caption = 'Окружность'
+      object N3: TMenuItem
+        Caption = 'Создать'
+        OnClick = N3Click
+      end
+      object N4: TMenuItem
+        Caption = 'Переместить'
+        OnClick = N4Click
+      end
+      object N5: TMenuItem
+        Caption = 'Удалить'
+        OnClick = N5Click
+      end
+    end
+    object MenuItem2: TMenuItem
+      Caption = 'Прямоугольник'
+      object N6: TMenuItem
+        Caption = 'Создать'
+        OnClick = N6Click
+      end
+      object N7: TMenuItem
+        Caption = 'Переместить'
+        OnClick = N7Click
+      end
+      object N8: TMenuItem
+        Caption = 'Повернуть'
+        OnClick = N8Click
+      end
+      object N9: TMenuItem
+        Caption = 'Удалить'
+        OnClick = N9Click
+      end
+    end
+    object MenuItem10: TMenuItem
+      Caption = 'Эллипс'
+      object N11: TMenuItem
+        Caption = 'Создать'
+        OnClick = N11Click
+      end
+      object N12: TMenuItem
+        Caption = 'Переместить'
+        OnClick = N12Click
+      end
+      object N13: TMenuItem
+        Caption = 'Повернуть'
+        OnClick = N13Click
+      end
+      object N14: TMenuItem
+        Caption = 'Удалить'
+        OnClick = N14Click
+      end
+    end
+    object MenuItem3: TMenuItem
+      Caption = 'Очистить'
+      OnClick = MenuItem3Click
+    end
+    object N15: TMenuItem
+      Caption = 'Выход'
+      OnClick = N15Click
+    end
+  end
+end
