@@ -1,0 +1,64 @@
+object Form1: TForm1
+  Left = 835
+  Height = 450
+  Top = 117
+  Width = 595
+  BorderStyle = bsToolWindow
+  Caption = 'Form1'
+  ClientHeight = 430
+  ClientWidth = 595
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.8.2.0'
+  object Image1: TImage
+    Left = 0
+    Height = 430
+    Top = 0
+    Width = 595
+    Align = alClient
+  end
+  object Button_CreateKont_Clear: TButton
+    Left = 8
+    Height = 25
+    Top = 392
+    Width = 110
+    Caption = 'Создать контейнер'
+    OnClick = Button_CreateKont_ClearClick
+    TabOrder = 0
+  end
+  object Button_CreateKont_Full: TButton
+    Left = 376
+    Height = 25
+    Top = 392
+    Width = 203
+    Caption = 'Создать заполненый контейнер'
+    OnClick = Button_CreateKont_FullClick
+    TabOrder = 1
+  end
+  object MainMenu1: TMainMenu
+    object MenuKont: TMenuItem
+      Caption = 'Объект контейнера'
+      object MenuKontAdd: TMenuItem
+        Caption = 'Добавить'
+        OnClick = MenuKontAddClick
+      end
+      object MenuKontDel: TMenuItem
+        Caption = 'Удалить'
+        OnClick = MenuKontDelClick
+      end
+      object MenuKontMove: TMenuItem
+        Caption = 'Переместить'
+        OnClick = MenuKontMoveClick
+      end
+      object MenuKontDel_Kont: TMenuItem
+        Caption = 'Уничтожить контейнер'
+        OnClick = MenuKontDel_KontClick
+      end
+    end
+    object MenuClose: TMenuItem
+      Caption = 'Выход'
+      OnClick = MenuCloseClick
+    end
+  end
+end
