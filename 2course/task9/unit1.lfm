@@ -1,21 +1,22 @@
 object Form1: TForm1
   Left = 270
-  Height = 428
+  Height = 512
   Top = 318
-  Width = 598
+  Width = 742
   BorderStyle = bsToolWindow
   Caption = 'Задание 9, Выполнил: Гильфанов Булат'
-  ClientHeight = 408
-  ClientWidth = 598
+  ClientHeight = 482
+  ClientWidth = 742
+  DesignTimePPI = 144
   Menu = MenuMy
   OnCreate = FormCreate
   Position = poScreenCenter
-  LCLVersion = '1.8.2.0'
+  LCLVersion = '1.8.4.0'
   object Image1: TImage
     Left = 0
-    Height = 408
+    Height = 482
     Top = 0
-    Width = 598
+    Width = 742
     Align = alClient
   end
   object MenuMy: TMainMenu

@@ -1,7 +1,5 @@
 unit Unit1;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
@@ -15,6 +13,7 @@ type
 
   TForm1 = class(TForm)
     Image1: TImage;
+    MenuCreateKont: TMenuItem;
     MenuMy: TMainMenu;
     MenuEditKont: TMenuItem;
     MenuEditKont_Add: TMenuItem;

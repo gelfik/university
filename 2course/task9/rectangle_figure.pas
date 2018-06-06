@@ -1,7 +1,5 @@
 unit Rectangle_Figure;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses

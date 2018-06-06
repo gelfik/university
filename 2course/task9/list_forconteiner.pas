@@ -1,7 +1,5 @@
 unit List_ForConteiner;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
