@@ -1,14 +1,12 @@
 ﻿unit Container;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
   Classes, SysUtils, Sotrudnik;
 
 type
-  TCont = class
+  TCont = class {Класс контейнера фигур на основе массива}
   private
     Sotr: array [1..10] of TSotr;
     Count: integer;
@@ -17,12 +15,12 @@ type
     function Get_Zarp(nom: integer): real;
     function DeleteSotr(aFam: string): boolean;
     procedure AddSotr(aSotr: TSotr);
-    procedure Vedomost;
+    procedure Stat;
   end;
 
 implementation
 
-constructor TCont.Create;
+constructor TCont.Create; {Создание контейнера}
 var
   i: integer;
 begin
@@ -31,13 +29,13 @@ begin
     Sotr[i] := nil;
 end;
 
-procedure TCont.AddSotr(aSotr: TSotr);
+procedure TCont.AddSotr(aSotr: TSotr); {Добавление сотрудника в контейнер}
 begin
   Count := Count + 1;
   Sotr[Count] := aSotr;
 end;
 
-function TCont.DeleteSotr(aFam: string): boolean;
+function TCont.DeleteSotr(aFam: string): boolean; {Удаление сотрудника из контейнера}
 var
   i: integer;
 begin
@@ -53,7 +51,7 @@ begin
   end;
 end;
 
-function TCont.Get_Zarp(nom: integer): real;
+function TCont.Get_Zarp(nom: integer): real; {Метод получения зарплаты}
 begin
   if Sotr[nom] = nil then
     Result := 0
@@ -61,7 +59,7 @@ begin
     Result := Sotr[nom].Zarplata;
 end;
 
-procedure TCont.Vedomost;
+procedure TCont.Stat; {Метод получения ведомости}
 var
   i: integer;
   sum: real;
@@ -72,10 +70,10 @@ begin
     if Sotr[i] <> nil then
     begin
       sum := sum + Sotr[i].Zarplata;
-      writeln('   ',Sotr[i].Get_Fam, '--', Sotr[i].Zarplata: 4: 2);
+      writeln(Sotr[i].Get_Fam, '--', Sotr[i].Zarplata: 4: 2);
     end;
   end;
-  writeln('   Всего: ', sum: 4: 2);
+  writeln('Всего: ', sum: 4: 2);
 end;
 
 end.

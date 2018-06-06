@@ -1,4 +1,4 @@
-unit List_ForConteiner;
+﻿unit List_ForConteiner;
 
 interface
 
@@ -6,8 +6,8 @@ uses
   Classes, SysUtils, Figure;
 
 type
-  ListItem = class
-  private
+  ListItem = class {Класс реализации списка}
+  private {Используем только в этом классе}
     Next: ListItem;
     Fig: TFigure;
   public
@@ -20,28 +20,28 @@ type
 
 implementation
 
-constructor ListItem.Create(aNext: ListItem; aFig: TFigure);
+constructor ListItem.Create(aNext: ListItem; aFig: TFigure); {Создание списка}
 begin
   Fig := aFig;
   Next := aNext;
 end;
 
-function ListItem.GetNext: ListItem;
+function ListItem.GetNext: ListItem; {Метод получения следующего элемента}
 begin
   Result := Next;
 end;
 
-function ListItem.GetFig: TFigure;
+function ListItem.GetFig: TFigure; {Метод получения фигуры}
 begin
   Result := Fig;
 end;
 
-procedure ListItem.SetNext(aNext: ListItem);
+procedure ListItem.SetNext(aNext: ListItem); {Метод установки следующего элемента}
 begin
   Next := aNext;
 end;
 
-procedure ListItem.SetFig(aFig: TFigure);
+procedure ListItem.SetFig(aFig: TFigure); {Метод установки фигуры}
 begin
   Fig := aFig;
 end;

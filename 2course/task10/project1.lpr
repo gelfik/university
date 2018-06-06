@@ -26,9 +26,8 @@ begin
     writeln('2 - Добавление сотрудника-окладника');
     writeln('3 - Добавление сотрудника-почасовика');
     writeln('4 - Удаление сотрудника');
-    writeln('5 - Вывода списка сотрудников и зарплат');
-    writeln;
-    writeln('00 - Выход');
+    writeln('5 - Вывода');
+    writeln('0 - Выход');
     writeln;
     Write('Ваш выбор: ');
     readln(answer);
@@ -38,19 +37,19 @@ begin
       '1':
       begin
         cont := TCont.Create;
-        writeln(' Контейнер создан!');
+        writeln('Контейнер создан!');
         writeln;
       end;
 
       '2':
       begin
-        Write(' Введите фамилию: ');
+        Write('Введите фамилию: ');
         readln(fam);
-        Write(' Введите должность: ');
+        Write('Введите должность: ');
         readln(dolg);
-        Write(' Введите оклад: ');
+        Write('Введите оклад: ');
         readln(oklad);
-        Write(' Введите ставку: ');
+        Write('Введите ставку: ');
         readln(stavka);
         sotr := TSotrOklad.Create(fam, dolg, oklad, stavka);
         cont.AddSotr(sotr);
@@ -59,13 +58,13 @@ begin
 
       '3':
       begin
-        Write(' Введите фамилию: ');
+        Write('Введите фамилию: ');
         readln(fam);
-        Write(' Введите должность: ');
+        Write('Введите должность: ');
         readln(dolg);
-        Write(' Введите отработанное время: ');
+        Write('Введите отработанное время: ');
         readln(hours);
-        Write(' Введите ставку: ');
+        Write('Введите ставку: ');
         readln(stavkah);
         sotr := TSotrPochas.Create(fam, dolg, hours, stavkah);
         cont.AddSotr(sotr);
@@ -74,12 +73,12 @@ begin
 
       '4':
       begin
-        Write(' Введите фамилию: ');
+        Write('Введите фамилию: ');
         readln(fam);
         if cont.DeleteSotr(fam) = True then
-          writeln(' Сотрудник удален!')
+          writeln('Сотрудник удален!')
         else
-          writeln(' Сотрудник не найден!');
+          writeln('Сотрудник не найден!');
         writeln;
       end;
 
@@ -89,5 +88,5 @@ begin
         writeln;
       end;
     end;
-  until answer = '00';
+  until answer = '0';
 end.

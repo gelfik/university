@@ -1,4 +1,4 @@
-unit Unit1;
+﻿unit Unit1;
 
 interface
 
@@ -57,7 +57,7 @@ begin
   image1.canvas.Pen.Mode := pmNotXOR;
 end;
 
-procedure TForm1.MenuCreateKont_ClearClick(Sender: TObject);
+procedure TForm1.MenuCreateKont_ClearClick(Sender: TObject); {Создание пустого контейнера}
 begin
   if MyConteiner <> nil then
     MyConteiner.ShowAll;
@@ -65,7 +65,7 @@ begin
   ShowMessage('Контейнер создан!');
 end;
 
-procedure TForm1.MenuCreateKont_FullClick(Sender: TObject);
+procedure TForm1.MenuCreateKont_FullClick(Sender: TObject); {Создание полного контейнера}
 var
   i, res: integer;
 begin
@@ -102,7 +102,7 @@ begin
   ShowMessage('Контейнер создан!');
 end;
 
-procedure TForm1.MenuEditKont_AddClick(Sender: TObject);
+procedure TForm1.MenuEditKont_AddClick(Sender: TObject); {Добавление фигуры в контейнер}
 var
   res: integer;
 begin
@@ -139,7 +139,7 @@ begin
   end;
 end;
 
-procedure TForm1.MenuEditKont_DelClick(Sender: TObject);
+procedure TForm1.MenuEditKont_DelClick(Sender: TObject); {Удаление фигуры из контейнера}
 begin
   if MyConteiner = nil then
     exit;
@@ -155,7 +155,7 @@ begin
   MyConteiner.MoveaLL(RandomRange(-100, 100), RandomRange(-100, 100));
 end;
 
-procedure TForm1.MenuEditKont_DelKontClick(Sender: TObject);
+procedure TForm1.MenuEditKont_DelKontClick(Sender: TObject); {Удаление контейнера}
 begin
   if MyConteiner = nil then
     ShowMessage('Создайте контейнер')
@@ -168,7 +168,7 @@ begin
   end;
 end;
 
-procedure TForm1.MenuClearClick(Sender: TObject);
+procedure TForm1.MenuClearClick(Sender: TObject); {Очистка и обнуление всех переменных}
 begin
   MyRectanglel := nil;
   MyEllips := nil;
@@ -179,7 +179,7 @@ begin
   ShowMessage('Поле очищено, контейнер уничтожен!');
 end;
 
-procedure TForm1.MenuCloseClick(Sender: TObject);
+procedure TForm1.MenuCloseClick(Sender: TObject); {Закрытие программы}
 begin
   Close;
 end;

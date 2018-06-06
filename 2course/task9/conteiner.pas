@@ -1,4 +1,4 @@
-unit Conteiner;
+﻿unit Conteiner;
 
 interface
 
@@ -6,8 +6,8 @@ uses
   Classes, SysUtils, Figure, List_ForConteiner;
 
 type
-  TCircCont = class
-  private
+  TCircCont = class {Класс контейнера фигур на списка}
+  private {Используем только в этом классе}
     First: ListItem;
   public
     constructor Create;
@@ -20,17 +20,17 @@ type
 
 implementation
 
-constructor TCircCont.Create;
+constructor TCircCont.Create; {Создание контейнера}
 begin
   First := nil;
 end;
 
-procedure TCircCont.add(aFig: TFigure);
+procedure TCircCont.add(aFig: TFigure); {Добавление фигуры в контейнер}
 begin
   First := listitem.Create(First, aFig);
 end;
 
-function TCircCont.Delete: ListItem;
+function TCircCont.Delete: ListItem; {Удаление фигуры из контейнера}
 var
   Temp, pTemp: ListItem;
 begin
@@ -48,12 +48,12 @@ begin
   ptemp.SetNext(nil);
 end;
 
-function TCircCont.GetFirst: ListItem;
+function TCircCont.GetFirst: ListItem; {Получение первого элемента списка}
 begin
   Result := First;
 end;
 
-procedure TCircCont.ShowAll;
+procedure TCircCont.ShowAll; {Просмотр элементов контейнера}
 var
   Temp: ListItem;
 begin
@@ -65,7 +65,7 @@ begin
   end;
 end;
 
-procedure TCircCont.MoveAll(dx, dy: integer);
+procedure TCircCont.MoveAll(dx, dy: integer); {Перемещение элементов контейнера}
 var
   Temp: ListItem;
 begin

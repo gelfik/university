@@ -1,4 +1,4 @@
-unit Ellipse_Circle;
+﻿unit Ellipse_Circle;
 
 interface
 
@@ -6,8 +6,8 @@ uses
   Classes, SysUtils, Circle_Figure;
 
 type
-  TEllipse = class(TCircle)
-  protected
+  TEllipse = class(TCircle) {Класс элипс, наследует класс TCircle}
+  private {Используем только в этом классе}
     r2: integer;
   public
     constructor Create(ax, ay, ar, ar2: integer);
@@ -19,19 +19,19 @@ implementation
 
 uses unit1;
 
-constructor TEllipse.Create(ax, ay, ar, ar2: integer);
+constructor TEllipse.Create(ax, ay, ar, ar2: integer); {Создание элипса}
 begin
-  inherited Create(ax, ay);
+  inherited Create(ax, ay); {Вызов процедуры из класса Кругов}
   r := ar;
   r2 := ar2;
 end;
 
-procedure TEllipse.Show;
+procedure TEllipse.Show; {Просмотр элипса}
 begin
   form1.image1.canvas.ellipse(x - r, y - r2, x + r, y + r2);
 end;
 
-procedure TEllipse.Turn;
+procedure TEllipse.Turn; {Поворот элипса}
 begin
   Show;
   if r > r2 then

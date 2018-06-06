@@ -1,4 +1,4 @@
-unit Rectangle_Figure;
+﻿unit Rectangle_Figure;
 
 interface
 
@@ -6,8 +6,8 @@ uses
   Classes, SysUtils, Math, Figure;
 
 type
-  TRectangle = class(TFigure)
-  private
+  TRectangle = class(TFigure) {Класс прямоуголник, наследует класс TFigure}
+  private {Используем только в этом классе}
     r, h: integer;
   public
     constructor Create(ax, ay: integer);
@@ -18,14 +18,14 @@ implementation
 
 uses unit1;
 
-constructor TRectangle.Create(ax, ay: integer);
+constructor TRectangle.Create(ax, ay: integer); {Создание прямоугольника}
 begin
-  inherited Create(ax, ay);
+  inherited Create(ax, ay); {Вызов процедуры из класса фигур}
   r := randomrange(50, 100);
   h := randomrange(50, 150);
 end;
 
-procedure TRectangle.Show;
+procedure TRectangle.Show; {Просмотр прямоугольника}
 begin
   form1.image1.canvas.Rectangle(x, y, x + r, y + h);
 end;

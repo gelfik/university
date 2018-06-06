@@ -1,14 +1,12 @@
 ﻿unit SotrudnikOklad;
 
-{$mode objfpc}{$H+}
-
 interface
 
 uses
   Classes, SysUtils, Sotrudnik;
 
 type
-  TSotrOklad = class(TSotr)
+  TSotrOklad = class(TSotr) {Класс сотрудника-окладчика, наследует класс TSotr}
   protected
     oklad: integer;
     stavka: real;
@@ -19,14 +17,14 @@ type
 
 implementation
 
-constructor TSotrOklad.Create(aFam, aDolg: string; aOklad: integer; aStavka: real);
+constructor TSotrOklad.Create(aFam, aDolg: string; aOklad: integer; aStavka: real); {Создание сотрудника-окладчика}
 begin
-  inherited Create(aFam, aDolg);
+  inherited Create(aFam, aDolg); {Вызов процедуры из класса TSotr}
   oklad := aOklad;
   stavka := aStavka;
 end;
 
-function TSotrOklad.Zarplata: real;
+function TSotrOklad.Zarplata: real; {Метод подсчета зарплаты}
 begin
   Result := oklad * stavka;
 end;

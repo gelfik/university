@@ -1,4 +1,4 @@
-program project1;
+﻿program project1;
 
 uses {$IFDEF UNIX} {$IFDEF UseCThreads}
   cthreads, {$ENDIF} {$ENDIF}
